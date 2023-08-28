@@ -2,8 +2,14 @@ import java.sql.SQLOutput;
 import java.util.*;
 import java.util.Scanner;
 class ATM{
-    int PIN=1234;
+    int PIN=0;
     Float Balance=10000f;
+
+    public void createPin(){
+        System.out.println("Create a pin.");
+        Scanner ss = new Scanner(System.in);
+        PIN = ss.nextInt();
+    }
     void CheckPin(){
         Scanner sc=new Scanner(System.in);
         System.out.println("Welcome! To ATM");
@@ -68,6 +74,7 @@ class ATM{
 public class ATMMachine {
     public static void main(String[] args) {
         ATM at = new ATM();
+        at.createPin();
         at.CheckPin();
     }
 }
